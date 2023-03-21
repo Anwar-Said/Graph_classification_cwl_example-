@@ -1,0 +1,36 @@
+{
+  "cwlVersion": "v1.1",
+  "class": "CommandLineTool",
+  "requirements": {
+    "InlineJavascriptRequirement": {},
+    "DockerRequirement": {
+      "dockerImageId": "anwarsaid135/leapdockers:latest"
+    },
+    "ShellCommandRequirement": {},
+    "InitialWorkDirRequirement": {
+      "listing": []
+    }
+  },
+  "inputs": {
+    "FileInput": {
+      "type": "File",
+      "inputBinding": {
+        "position": 1
+      }
+    }
+  },
+  "outputs": {
+    "result": {
+      "type": "File",
+      "outputBinding": {
+        "glob": "results.txt"
+      }
+    }
+  },
+  "arguments": [
+    {
+      "shellQuote": false,
+      "valueFrom": "ln -s /app/* ./\npython main.py"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "cwlVersion": "v1.1",
+  "class": "Workflow",
+  "inputs": {
+    "FileInput": "File"
+  },
+  "outputs": {
+    "result": {
+      "type": "File",
+      "outputSource": "gc_docker/result"
+    }
+  },
+  "steps": {
+    "gc_docker": {
+      "run": "387d17ca-0a88-24a5-39d9-272212b4de1f_step.cwl.json",
+      "in": {
+        "FileInput": "FileInput"
+      },
+      "out": [
+        "result"
+      ]
+    }
+  },
+  "requirements": {
+    "SubworkflowFeatureRequirement": {},
+    "InitialWorkDirRequirement": {
+      "listing": []
+    }
+  }
+}

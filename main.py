@@ -1,4 +1,4 @@
-import netlsd
+import dgsd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 import networkx as nx
@@ -8,8 +8,8 @@ import csv
 import sys
 
 
-file_path = sys.argv[1]
-
+# file_path = sys.argv[1]
+file_path = "data/dataset.pkl"
 with open(file_path, 'rb') as file:
     dataset = pickle.load(file)
 graphs,labels = dataset['graphs'],dataset['labels']
@@ -17,7 +17,7 @@ print("dataset loaded successfully!")
 print("# of samples:", len(graphs))
 print("# of classes:", len(np.unique(labels)))
 
-embeddings = [netlsd.heat(g) for g in graphs]
+embeddings = [dgsd.DGSD().get_descriptor(g) for g in graphs]
 embeddings = np.array(embeddings)
 print("Embeddings computed successfully! now applying classifier", embeddings.shape)
 
