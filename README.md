@@ -12,8 +12,10 @@ This repository include a cwl example for graph classification task. The cwl wor
 
 git https://github.com/Anwar-Said/Graph_classification_cwl_example-.git
 
-cd Graph_classification_cwl_example-
-**run command**: docker build -t gc_docker:latest .
+cd Graph_classification_cwl_example- </br>
+
+
+**run command**: docker build -t gc_docker:latest . </br>
 
 cd GC_toxicity
 ```
