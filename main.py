@@ -8,8 +8,8 @@ import csv
 import sys
 
 
-# file_path = sys.argv[1]
-file_path = "data/dataset.pkl"
+file_path = sys.argv[1]
+# file_path = "data/dataset.pkl"
 with open(file_path, 'rb') as file:
     dataset = pickle.load(file)
 graphs,labels = dataset['graphs'],dataset['labels']
